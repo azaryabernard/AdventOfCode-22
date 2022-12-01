@@ -1,4 +1,4 @@
-# AdventOfCode-22
+# Advent Of Code 2022
 
 ## Installation
 
@@ -14,3 +14,6 @@ arch -x86_64 make
 
 #### Day 1 - Calorie Counting
 > Progamming Language: **C/ASM**
+
+#### Day 2 - xxx
+> Progamming Language: 
