@@ -1,6 +1,5 @@
 .intel_syntax noprefix
 .global _calorie_counting
-.global _three_calorie_counting
 
 .text
 /* ------------------------ MAIN ------------------------ */
