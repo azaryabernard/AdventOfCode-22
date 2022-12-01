@@ -12,5 +12,5 @@ arch -x86_64 make
 
 ## Challenges
 
-### Day 1 - Calorie Counting
-    Progamming Language: C/ASM
+#### Day 1 - Calorie Counting
+> Progamming Language: **C/ASM**
