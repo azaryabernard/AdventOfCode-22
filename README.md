@@ -13,13 +13,16 @@ To compile the code for ARM64 MacOS, you need to use:
 arch -x86_64 make
 ```
 
+For Haskell, I've used a Stack project structure inside each daily challenges, using GHC 9.4.2
+
 
 ## Challenges
 
 #### Day 1 - Calorie Counting
 [Problem Statement](https://adventofcode.com/2022/day/1)
-> Progamming Language: **C/ASM**
+> Progamming Language: **C/ASM**,
+> alternative version: **Haskell**
 
-#### Day 2 - ?
+#### Day 2 - Rock Paper Scissors
 [Problem Statement](https://adventofcode.com/2022/day/2)
-> Progamming Language: 
+> Progamming Language: **Haskell**
