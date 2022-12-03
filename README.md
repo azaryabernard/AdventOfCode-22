@@ -6,14 +6,20 @@
 
 ## Installation
 
+I will be mainly using Haskell.
+For Haskell, I've used a Stack project structure inside each daily challenges, using GHC 9.4.2
+After installing Stack and the needed dependencies, run it with:
+
+```bash
+stack build && stack exec main
+```
+
 For C-based programming language (C/C++/ASM), I've added the Makefile inside each project
 To compile the code for ARM64 MacOS, you need to use:
 
 ```bash
 arch -x86_64 make
 ```
-
-For Haskell, I've used a Stack project structure inside each daily challenges, using GHC 9.4.2
 
 
 ## Challenges
@@ -25,4 +31,8 @@ For Haskell, I've used a Stack project structure inside each daily challenges, u
 
 #### Day 2 - Rock Paper Scissors
 [Problem Statement](https://adventofcode.com/2022/day/2)
+> Progamming Language: **Haskell**
+
+#### Day 2 - Rucksack Reorganization
+[Problem Statement](https://adventofcode.com/2022/day/3)
 > Progamming Language: **Haskell**
