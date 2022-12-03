@@ -7,7 +7,7 @@
 ## Installation
 
 I will be mainly using Haskell.
-For Haskell, I've used a Stack project structure inside each daily challenges, using GHC 9.4.2
+For Haskell, I've used a Stack project structure inside each daily challenges, using system GHC 9.4.2.<br />
 After installing Stack and the needed dependencies, run it with:
 
 ```bash
