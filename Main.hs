@@ -1,11 +1,11 @@
 module Main (main) where
 
 -- All the days are imported here
-import Day01 (day01)
-import Day02 (day02)
-import Day03 (day03)
-import Day04 (day04)
-import Day05 (day05)
+import Day01 (run)
+import Day02 (run)
+import Day03 (run)
+import Day04 (run)
+import Day05 (run)
 -- import Day06 (day06)
 -- import Day07 (day07)
 -- import Day08 (day08)
@@ -33,19 +33,19 @@ import Data.Maybe (mapMaybe)
 import Control.Monad (void)
 import System.Directory (getCurrentDirectory, setCurrentDirectory)
 
-challenges :: [(String, IO ())]
+challenges :: [(IO (), String)]
 challenges = [
-  ("Day 1 - Calorie Counting", day01),
-  ("Day 2 - Rock Paper Scissor", day02),
-  ("Day 3 - Rucksack Reorganization", day03),
-  ("Day 4 - Camp Cleanup", day04),
-  ("Day 5 - xxx", day05)
+  (Day01.run, "Day 1 - Calorie Counting"),
+  (Day02.run, "Day 2 - Rock Paper Scissor"),
+  (Day03.run, "Day 3 - Rucksack Reorganization"),
+  (Day04.run, "Day 4 - Camp Cleanup"),
+  (Day05.run, "Day 5 - xxx")
  ]
 
 runChallenge :: Int -> IO()
 runChallenge n | n > length challenges = putStrLn "Invalid challenge number!"
 runChallenge n = do
-  let (challenge, action) = challenges !! (n-1)
+  let (action, challenge) = challenges !! (n-1)
   putStrLn $ "Running: " ++ challenge ++ "\n" ++ replicate 70 '-'
   root <- getCurrentDirectory
   setCurrentDirectory challenge >> action
