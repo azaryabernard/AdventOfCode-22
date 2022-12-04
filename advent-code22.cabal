@@ -19,7 +19,7 @@ executable main
                        "Day 1 - Calorie Counting"
                        "Day 2 - Rock Paper Scissor"
                        "Day 3 - Rucksack Reorganization"
-                       "Day 4 -"
+                       "Day 4 - Camp Cleanup"
   other-modules:       Day01, Day02, Day03, Day04
                       --  Day06, Day07, Day08, Day09, Day10, 
                       --  Day11, Day12, Day13, Day14, Day15, 

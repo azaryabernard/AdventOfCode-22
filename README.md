@@ -33,6 +33,10 @@ arch -x86_64 make
 [Problem Statement](https://adventofcode.com/2022/day/2)
 > Progamming Language: **Haskell**
 
-#### Day 2 - Rucksack Reorganization
+#### Day 3 - Rucksack Reorganization
 [Problem Statement](https://adventofcode.com/2022/day/3)
+> Progamming Language: **Haskell**
+
+#### Day 4 - Camp Cleanup
+[Problem Statement](https://adventofcode.com/2022/day/4)
 > Progamming Language: **Haskell**

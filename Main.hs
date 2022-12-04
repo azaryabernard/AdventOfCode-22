@@ -38,7 +38,7 @@ challenges = [
   ("Day 1 - Calorie Counting", day01),
   ("Day 2 - Rock Paper Scissor", day02),
   ("Day 3 - Rucksack Reorganization", day03),
-  ("Day 4 -", day04)
+  ("Day 4 - Camp Cleanup", day04)
  ]
 
 runChallenge :: Int -> IO()
