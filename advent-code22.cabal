@@ -1,0 +1,38 @@
+name:                advent-code22
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/azaryabernard/advent-code#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Azarya Bernard Haposan
+maintainer:          azarya.haposan@tum.de
+copyright:           2022 Azarya Bernard Haposan
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+                     CHANGELOG.md
+
+executable main
+  hs-source-dirs:      .
+                       "Day 1 - Calorie Counting"
+                       "Day 2 - Rock Paper Scissor"
+                       "Day 3 - Rucksack Reorganization"
+  other-modules:       Day01, Day02, Day03
+                      --  Day06, Day07, Day08, Day09, Day10, 
+                      --  Day11, Day12, Day13, Day14, Day15, 
+                      --  Day16, Day17, Day18, Day19, Day20, 
+                      --  Day21, Day22, Day23, Day24, Day25
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       split, directory, base >= 4.7 && < 5
+  ghc-options:         -Wall
+                       -Wcompat
+                       -Widentities
+                       -Wincomplete-record-updates
+                       -Wincomplete-uni-patterns
+                       -Wmissing-export-lists
+                       -Wmissing-home-modules
+                       -Wpartial-fields
+                       -Wredundant-constraints

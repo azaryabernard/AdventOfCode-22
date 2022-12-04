@@ -1,4 +1,4 @@
-# Changelog for `my-project`
+# Changelog for `advent-code`
 
 All notable changes to this project will be documented in this file.
 
@@ -8,4 +8,4 @@ and this project adheres to the
 
 ## Unreleased
 
-## 0.1.0.0 - 2022-12-02
+## 0.1.0.0 - YYYY-MM-DD

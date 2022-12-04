@@ -6,9 +6,9 @@
 
 ## Installation
 
-I will be mainly using Haskell.
-For Haskell, I've used a Stack project structure inside each daily challenges, using system GHC 9.4.2.<br />
-After installing Stack and the needed dependencies, run it with:
+I will be mainly using **Haskell**, compiled using system GHC 9.4.2.<br />
+For Haskell, I use a Stack project structure with a main module to run each of the daily challenges.<br />
+After installing Stack, GHC, and the needed dependencies, run it with:
 
 ```bash
 stack build && stack exec main
@@ -26,8 +26,8 @@ arch -x86_64 make
 
 #### Day 1 - Calorie Counting
 [Problem Statement](https://adventofcode.com/2022/day/1)
-> Progamming Language: **C/ASM**,
-> alternative version: **Haskell**
+> Progamming Language: **Haskell**,
+> Alternate Version: **C/ASM**
 
 #### Day 2 - Rock Paper Scissors
 [Problem Statement](https://adventofcode.com/2022/day/2)

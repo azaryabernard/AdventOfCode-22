@@ -1,4 +1,4 @@
-module Main (main) where
+module Day02 (day02) where
 
 -- A: Rock, B: Paper, C: Scissors | A beats C, B beats A, C beats B
 -- m: (0 -> X: Rock, Y: Paper, Z: Scissors), (1 -> X: Lose, Y: Draw, Z: Win)
@@ -21,9 +21,9 @@ eval m xs
   (_, _)    -> 0
 
 -- main, assuming input is valid
-main :: IO ()
-main = do
+day02 :: IO ()
+day02 = do
   pairs (eval 0) >>= putStrLn . (++) "Score from strategy: "
   pairs (eval 1) >>= putStrLn . (++) "Score from top secret strategy: "
   where pairs f = do
-         show . sum . map f . lines <$> readFile "src/input.data"
+         show . sum . map f . lines <$> readFile "input.data"
