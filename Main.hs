@@ -5,7 +5,7 @@ import Day01 (day01)
 import Day02 (day02)
 import Day03 (day03)
 import Day04 (day04)
--- import Day05 (day05)
+import Day05 (day05)
 -- import Day06 (day06)
 -- import Day07 (day07)
 -- import Day08 (day08)
@@ -38,18 +38,19 @@ challenges = [
   ("Day 1 - Calorie Counting", day01),
   ("Day 2 - Rock Paper Scissor", day02),
   ("Day 3 - Rucksack Reorganization", day03),
-  ("Day 4 - Camp Cleanup", day04)
+  ("Day 4 - Camp Cleanup", day04),
+  ("Day 5 - xxx", day05)
  ]
 
 runChallenge :: Int -> IO()
 runChallenge n | n > length challenges = putStrLn "Invalid challenge number!"
 runChallenge n = do
   let (challenge, action) = challenges !! (n-1)
-  putStrLn $ "Running: " ++ challenge ++ "\n" ++ replicate 50 '-'
+  putStrLn $ "Running: " ++ challenge ++ "\n" ++ replicate 70 '-'
   root <- getCurrentDirectory
   setCurrentDirectory challenge >> action
   setCurrentDirectory root
-  putStrLn $ replicate 50 '-'
+  putStrLn $ replicate 70 '-'
 
 main :: IO ()
 main = do

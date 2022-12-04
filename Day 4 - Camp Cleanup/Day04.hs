@@ -13,9 +13,9 @@ filterOverlap = filter $ \xs -> not.null $ head xs `intersect` last xs
 day04 :: IO ()
 day04 = do 
   input <- map (splitOn ",") . lines <$> readFile "input.data"
-  let parse  = map.map $ \xs -> let ys = splitOn "-" xs in [read.head $ ys .. read.last $ ys]
-  -- parse :: [[[Char]]] -> [[[Int]]] = [[[14..38], [14..14]], [[2..10], [3..55]], ...]
+  let parsed  = (map.map $ \xs -> let ys = splitOn "-" xs in [read.head $ ys .. read.last $ ys]) input
+  -- parsed :: [[[Int]]] = [[[14..38], [14..14]], [[2..10], [3..55]], ...]
   putStrLn $ (++) "Total assignment pairs of one range fully contains the other: " 
-           $ show . length . filterContain . parse $ input
+           $ show . length . filterContain $ parsed
   putStrLn $ (++) "Total assignment pairs that overlap at all: " 
-           $ show . length . filterOverlap . parse $ input
+           $ show . length . filterOverlap $ parsed
