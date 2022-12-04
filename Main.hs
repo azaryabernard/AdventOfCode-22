@@ -1,10 +1,10 @@
 module Main (main) where
-  
+
 -- All the days are imported here
 import Day01 (day01)
 import Day02 (day02)
 import Day03 (day03)
--- import Day04 (day04)
+import Day04 (day04)
 -- import Day05 (day05)
 -- import Day06 (day06)
 -- import Day07 (day07)
@@ -37,7 +37,8 @@ challenges :: [(String, IO ())]
 challenges = [
   ("Day 1 - Calorie Counting", day01),
   ("Day 2 - Rock Paper Scissor", day02),
-  ("Day 3 - Rucksack Reorganization", day03)
+  ("Day 3 - Rucksack Reorganization", day03),
+  ("Day 4 -", day04)
  ]
 
 runChallenge :: Int -> IO()

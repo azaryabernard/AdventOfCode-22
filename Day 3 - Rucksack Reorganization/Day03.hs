@@ -4,10 +4,6 @@ import Data.List (intersect)
 import Data.List.Split (chunksOf)
 import Data.Char (ord, isUpper)
 
--- | Calculate the priority of an item type
-eval :: Char -> Int
-eval c = ord c - if isUpper c then 38 else 96
-
 -- main, assuming input is valid
 day03 :: IO ()
 day03 = do
@@ -16,3 +12,5 @@ day03 = do
   let badge = sum $ eval . head . foldr1 intersect <$> chunksOf 3 input
   putStrLn $ "Sum of the priorities of all item types: " ++ show prio
   putStrLn $ "Sum of the priorities of the team badges: " ++ show badge
+  -- Calculate the priority of an item type
+  where eval c = ord c - if isUpper c then 38 else 96
