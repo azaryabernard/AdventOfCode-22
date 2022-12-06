@@ -12,7 +12,6 @@ category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
 extra-source-files:  README.md
-                     CHANGELOG.md
 
 executable main
   hs-source-dirs:      .
@@ -20,7 +19,7 @@ executable main
                        "Day 2 - Rock Paper Scissor"
                        "Day 3 - Rucksack Reorganization"
                        "Day 4 - Camp Cleanup"
-                       "Day 5 - xxx"
+                       "Day 5 - Supply Stacks"
   other-modules:       Day01, Day02, Day03, Day04, Day05
                       --  Day06, Day07, Day08, Day09, Day10, 
                       --  Day11, Day12, Day13, Day14, Day15, 
