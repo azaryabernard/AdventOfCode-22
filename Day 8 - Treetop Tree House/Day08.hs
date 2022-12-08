@@ -14,13 +14,13 @@ apply f g xss = [f j (row i xss) `g` f i (column j xss) |
                  i <- [0..length xss-1], j <- [0..length (head xss)-1]]
 
 isVisibleAt :: Int -> [Int] -> Bool
-isVisibleAt i xs = let (left, right) = second (drop 1) $ splitAt i xs 
-                    in all (<xs!!i) left || all (<xs!!i) right
+isVisibleAt i xs = all (<xs!!i) left || all (<xs!!i) right
+  where (left, right) = second (drop 1) $ splitAt i xs
 
 countScoreAt :: Int -> [Int] -> Int
 countScoreAt i xs = len left * len right
-  where len xs' = (\x -> if x==length xs' then x else x+1) . length $ takeWhile (<xs!!i) xs'
-        (left, right) = bimap reverse (drop 1) $ splitAt i xs
+  where (left, right) = bimap reverse (drop 1) $ splitAt i xs
+        len xs' = (\l -> if l==length xs' then l else l+1) . length $ takeWhile (<xs!!i) xs'
 
 countVisible :: [[Int]] -> Int -- Part 1
 countVisible = length . filter id . apply isVisibleAt (||)
@@ -32,5 +32,5 @@ highestScore = maximum . apply countScoreAt (*)
 run :: IO ()
 run = do 
   input <- (map . map) digitToInt . lines <$> readFile "input.data"
-  putStr "Visible trees from outside the grid: "  >> print (countVisible input)
-  putStr "Highest tree's scenic score: "  >> print (highestScore input)
+  putStr "Visible trees from outside the grid: " >> print (countVisible input)
+  putStr "Highest tree's scenic score: " >> print (highestScore input)
