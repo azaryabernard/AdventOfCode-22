@@ -40,27 +40,26 @@ moveNodes direction len ps = ps : moveNodes direction (len-1) ps''
   where ps'' = scanl1 (flip followNext) ps' -- scan is fold that retains the process
         ps' = moveIndex direction (head ps) : tail ps
 
--- move the rope with all the steps in the directions, save the history
+-- move the rope with all the steps in the directions, history: each last element is tail
 moveRope ::  [Position] -> [(Direction, Step)] -> [[Position]]
 moveRope ps [] = [ps]
 moveRope ps ((direction, len) : xs) = ys ++ moveRope ps' xs
   where ps' = if null ys then ps else last ys
         ys = moveNodes direction len ps
 
-traceTail :: [[Position]] -> [Position]
-traceTail = nub . map last -- distinct positions of the tail
-
-prettyPrint :: [Position] -> IO () -- print the grid 😉
-prettyPrint ps =  putStrLn "" >> mapM_ putStrLn fillGrid
-  where fillGrid = [[if (x,y) `elem` ps then 'X' else '.' | x <- [minX..maxX]] | y <- [minY..maxY]]
-        (minX, minY) = (minimum . map fst $ ps, minimum . map snd $ ps)
-        (maxX, maxY) = (maximum . map fst $ ps, maximum . map snd $ ps)
-
 -- main, assuming input is valid.
 run :: IO ()
 run = do 
   input <- map (bimap (\x->read x::Direction) (\x->read x::Step) . splitAt 1) . lines <$> readFile "input.data"
-  let part1 = traceTail $ moveRope (replicate 2 (0,0)) input
+  let traceTail n = nub . map last . moveRope (replicate n (0,0))
+  let part1 = traceTail 2 input
+  let part2 = traceTail 10 input
   prettyPrint part1 >> putStrLn ("Visited Positions of the rope's tail: " ++ show (length part1))
-  let part2 = traceTail $ moveRope (replicate 10 (0,0)) input
-  prettyPrint part2 >> putStrLn ("Visited Positions of the rope and its extended tail: " ++ show (length part2))
+  prettyPrint part2 >> putStrLn ("Visited Positions of the rope's extended tail: " ++ show (length part2))
+
+-- Extra: print the grid 😉
+prettyPrint :: [Position] -> IO () 
+prettyPrint ps =  putStrLn "" >> mapM_ putStrLn fillGrid
+  where fillGrid = [[if (x,y) `elem` ps then 'X' else '.' | x <- [minX..maxX]] | y <- [minY..maxY]]
+        (minX, minY) = (minimum . map fst $ ps, minimum . map snd $ ps)
+        (maxX, maxY) = (maximum . map fst $ ps, maximum . map snd $ ps)
