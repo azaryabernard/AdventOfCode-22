@@ -25,7 +25,7 @@ findDirection (xt, yt) (xh, yh)
   | otherwise = error "findDirection: undefined"
 
 nodeAroundNode :: Position -> Position -> Bool 
-nodeAroundNode node (x, y) = or [node == (x+i, y+j) | i <- [-1, 0, 1], j <- [-1, 0, 1]]
+nodeAroundNode node (x, y) = node `elem` [(x+i, y+j) | i <- [-1, 0, 1], j <- [-1, 0, 1]]
 
 -- to let the previous node follow the next node
 followNext :: Position -> Position -> Position
